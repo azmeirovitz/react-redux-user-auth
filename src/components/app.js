@@ -1,14 +1,22 @@
 import React from 'react';
-import '../assets/css/app.scss';
-import logo from '../assets/images/logo.svg';
+import 'materialize-css/dist/css/materialize.min.css';
+import Nav from './nav';
+import About from './about';
+import SecretList from './secret_list';
+import {Route} from 'react-router-dom';
+
 
 const App = () => (
-    <div className="app">
-        <div className="welcome">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome To React</h1>
-        </div>
+    <div className="container">
+        <Nav />
+
+        <Route path="/about" component={About}/>
+        <Route path="/secret-list" component={SecretList}/>
+
+        {/* <h1 className="center">User Auth Demo</h1> */}
+    
     </div>
 );
 
 export default App;
+
